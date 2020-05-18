@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="Spinner_quest01">
+        <item>GASOLINA</item>
+        <item>FLEX</item>
+        <item>ELÉTRICO</item>
+    </string-array>
+
+    <string-array name="Spinner_quest02">
+        <item>PARTICULAR</item>
+        <item>LOCAÇÃO ANUAL</item>
+        <item>LOCAÇÃO AVULSO</item>
+        <item>AUTO ESCOLA</item>
+        <item>MOTOS NÃO EMPLACADAS (LAZER)</item>
+        <item>USO EM COMPETIÇÕES/TRILHAS</item>
+        <item>TEST DRIVE</item>
+        <item>MOTO TAXI</item>
+        <item>ESCOLTA/SEGURANÇA</item>
+    </string-array>
+
+    <string-array name="Spinner_quest03">
+        <item>LAZER</item>
+        <item>ATIVIDADE PROFISSIONAL</item>
+        <item>IDA E VOLTA DO TRABALHO E LAZER</item>
+    </string-array>
+
+    <string-array name="Spinner_quest04">
+        <item>SIM</item>
+        <item>NÃO</item>
+    </string-array>
+
+    <string-array name="Spinner_quest05">
+        <item>SIM, GARAGEM NA RESIDÊNCIA</item>
+        <item>SIM, GARAGEM EM CONDOMÍNIO FECHADO</item>
+        <item>SIM, ESTACIONAMENTO</item>
+        <item>NÃO</item>
+    </string-array>
+
+    <string-array name="Spinner_quest06">
+        <item>NÃO, UTILIZA PARA IR AO LOCAL DE TRABALHO</item>
+        <item>UTILIZA E GUARDA NO LOCAL DE TRABALHO</item>
+        <item>UTILIZA, MAS NÃO GUARDA QUANDO EM LOCAL DE TRABALHO</item>
+
+    </string-array>
+
+    <string-array name="Spinner_quest07">
+        <item>NÃO UTILIZA PARA IR À FACULDADE/COLÉGIO</item>
+        <item>UTILIZA PARA IR À FACULDADE/COLÉGIO E GUARDA</item>
+        <item>UTILIZA PARA IR À FACULDADE/COLÉGIO, MAS NÃO GUARDA</item>
+    </string-array>
+
+    <string-array name="Spinner_quest08">
+        <item>SIM</item>
+        <item>NÃO</item>
+    </string-array>
+
+    <string-array name="Spinner_genero">
+        <item>GÊNERO</item>
+        <item>MASCULINO</item>
+        <item>FEMININO</item>
+        <item>OUTROS</item>
+    </string-array>
+
+    <string-array name="Spinner_estado_civil">
+        <item>SOLTEIRO</item>
+        <item>CASADO</item>
+        <item>SEPARADO</item>
+        <item>DIVORCIADO</item>
+        <item>VIUVO</item>
+
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,89 @@
+package com.example.appmotoseguros.activities;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.appmotoseguros.R;
+import com.example.appmotoseguros.adapter.AdapterOfertas;
+import com.example.appmotoseguros.model.Ofertas;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaOfertasActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private List<Ofertas> listaofertas = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lista_ofertas);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle("");//Sem título
+
+        recyclerView = findViewById(R.id.recycleListaOfertas);
+
+        //Lista Local de teste
+        this.criarOfertas();
+
+        //Configurar adapter
+        AdapterOfertas adapterOfertas = new AdapterOfertas(listaofertas);
+
+
+        //Configurar recycleview
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapterOfertas);
+        recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
+
+    }
+
+    private void criarOfertas() {
+
+        Ofertas ofertas = new Ofertas("293", "Mapfre - Garantia Motor e Câmbio", "Regras de Recusa", "Regras de Recusa", new BigDecimal(750.00), "32801");
+        this.listaofertas.add(ofertas);
+
+        ofertas = new Ofertas("294", "Mapfre - Garantia Motor e Cambio e Suspensão", "Regras de Recusa", "Regras de Recusa", new BigDecimal(900.00), "32801");
+        this.listaofertas.add(ofertas);
+
+        ofertas = new Ofertas("295", "Mapfre - Motor, Cambio, Suspensão e Pane Eletrica", "Regras de Recusa", "Regras de Recusa", new BigDecimal(1100.00), "32801");
+        this.listaofertas.add(ofertas);
+
+        ofertas = new Ofertas("296", "Dekra - Vistoria Veicular para Transferência", "Voucher para vistoria de compra e venda de veiculos", "Voucher p/ vistoria de compra e venda de veiculos", new BigDecimal(120.00), "32801");
+        this.listaofertas.add(ofertas);
+
+        ofertas = new Ofertas("297", "Dekra - Vistoria Veicular Cautelar", "Voucher para vistoria cautelar", "Voucher para vistoria cautelar", new BigDecimal(200.00), "32801");
+        this.listaofertas.add(ofertas);
+
+    }
+
+
+    public void ChamaResumoCompra(View view) {
+        Intent intent = new Intent(ListaOfertasActivity.this, ResumoCompraActivity.class);
+        startActivity(intent);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                startActivity(new Intent(this, ListaOfertasActivity.class));
+                finishAffinity();
+                break;
+            default:
+                break;
+        }
+        return true;
+    }
+}

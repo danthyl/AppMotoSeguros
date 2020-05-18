@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/titulo_dados_vendedor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:padding="5dp"
+                android:text="@string/dados_do_vendedor"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editCpfVendedor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/cpf_do_vendedor"
+                android:inputType="number"
+                android:text="@string/cpf_do_vendedor" />
+
+            <EditText
+                android:id="@+id/editCelularVendedor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/celular_do_vendedor"
+                android:inputType="number"
+                android:text="@string/celular_do_vendedor" />
+
+            <TextView
+                android:id="@+id/titulo_dados_cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark"
+                android:padding="5dp"
+                android:text="@string/dados_do_cliente"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editDataNascimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/data_de_nascimento"
+                android:inputType="date"
+                android:text="@string/data_de_nascimento" />
+
+            <EditText
+                android:id="@+id/editCpfCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/cpf_do_cliente"
+                android:inputType="textPersonName"
+                android:text="@string/cpf_do_cliente"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editCelularCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/celular_do_cliente"
+                android:inputType="number"
+                android:text="@string/celular_do_cliente"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editConfereCelularCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/confere_celular_do_cliente"
+                android:inputType="textPersonName"
+                android:text="@string/confere_celular_do_cliente"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editCepCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/cep"
+                android:inputType="textPersonName"
+                android:text="@string/cep"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editComplementoCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="@string/complemento"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text="@string/complemento" />
+
+            <EditText
+                android:id="@+id/editNumeroCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/numero"
+                android:inputType="textPersonName"
+                android:text="@string/numero"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerEstadoCivilCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_estado_civil" />
+
+            <Spinner
+                android:id="@+id/spinnerGeneroCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_genero" />
+
+            <Button
+                android:id="@+id/buttonProximo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/black"
+                android:ellipsize="none"
+                android:onClick="ChamaFormularioVeiculo"
+                android:text="@string/proximo"
+                android:textColor="@android:color/holo_orange_light"
+                android:textColorHighlight="@android:color/holo_orange_light"
+                android:textColorHint="@android:color/holo_orange_light"
+                android:textColorLink="@android:color/holo_orange_light"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

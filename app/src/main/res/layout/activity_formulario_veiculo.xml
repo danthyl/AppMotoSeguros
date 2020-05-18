@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/titulo_dados_veiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/dados_do_veiculo"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subtitulo_placa_veiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/placa_do_veiculo"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editPlacaLetras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/placa_letras"
+            android:inputType="textPersonName"
+            android:nextFocusLeft="@id/editPlacaNumeros"
+            android:nextFocusRight="@id/editPlacaNumeros"
+            android:nextFocusUp="@id/editPlacaNumeros"
+            android:nextFocusDown="@id/editPlacaNumeros"
+            android:nextFocusForward="@id/editPlacaNumeros"
+            android:text="@string/placa_letras"
+            android:textSize="30sp"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/editPlacaNumeros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/placa_numero"
+            android:inputType="number"
+            android:text="@string/placa_numero"
+            android:textSize="30sp"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/subtitulo_renavan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/renavam"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:hint="@string/campo_renavam"
+        android:inputType="textPersonName"
+        android:text="@string/placa_numeros"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/subtitulo_quilometragem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/quilometragem"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editTextQuilo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:hint="@string/campo_veiculo"
+        android:inputType="number|textPersonName"
+        android:text="@string/campo_veiculo"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/subtitulo_foto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/foto_da_quilometragem"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageViewFotoPainel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        android:contentDescription="@string/todo" />
+
+    <Button
+        android:id="@+id/buttonProx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/black"
+        android:onClick="ChamaFormularioQuestionario"
+        android:text="@string/proximo"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
