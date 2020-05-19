@@ -26,8 +26,9 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/usuario"
-        android:inputType="textPersonName"
-        android:text="@string/usuario" />
+        android:inputType="number"
+        android:maxLength="14"
+        android:textColorHint="@android:color/darker_gray" />
 
     <EditText
         android:id="@+id/editSenha"
@@ -37,8 +38,8 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/senha"
-        android:inputType="textPassword"
-        android:text="@string/senha" />
+        android:inputType="number"
+        android:textColorHint="@android:color/darker_gray" />
 
     <Button
         android:id="@+id/buttonAcesso"

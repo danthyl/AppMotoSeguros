@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="14"
                 android:ems="10"
                 android:hint="@string/cpf_do_vendedor"
                 android:inputType="number"
@@ -43,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="14"
                 android:ems="10"
                 android:hint="@string/celular_do_vendedor"
                 android:inputType="number"
@@ -65,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="10"
                 android:ems="10"
                 android:hint="@string/data_de_nascimento"
                 android:inputType="date"
@@ -76,9 +79,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="14"
                 android:ems="10"
                 android:hint="@string/cpf_do_cliente"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:text="@string/cpf_do_cliente"
                 android:textSize="18sp" />
 
@@ -88,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="14"
                 android:ems="10"
                 android:hint="@string/celular_do_cliente"
                 android:inputType="number"
@@ -100,9 +105,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="14"
                 android:ems="10"
                 android:hint="@string/confere_celular_do_cliente"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:text="@string/confere_celular_do_cliente"
                 android:textSize="18sp" />
 
@@ -112,9 +118,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="9"
                 android:ems="10"
                 android:hint="@string/cep"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:text="@string/cep"
                 android:textSize="18sp" />
 
@@ -126,7 +133,7 @@
                 android:ems="10"
                 android:hint="@string/complemento"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
+                android:inputType="text|textNoSuggestions"
                 android:text="@string/complemento" />
 
             <EditText
@@ -135,6 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:autofillHints=""
+                android:maxLength="6"
                 android:ems="10"
                 android:hint="@string/numero"
                 android:inputType="textPersonName"
