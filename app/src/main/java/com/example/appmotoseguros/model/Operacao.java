@@ -1,13 +1,31 @@
 package com.example.appmotoseguros.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Operacao {
 
+    @Expose
+    @SerializedName("geolocalizacao")
     private String geolocalizacao;
+
+    @Expose
+    @SerializedName("marca")
     private String marca;
+
+    @Expose
+    @SerializedName("modelo")
     private String modelo;
+
+    @Expose
+    @SerializedName("cnpjcliente")
     private String cnpjcliente;
+
+    @Expose
+    @SerializedName("numeroSerial")
     private String numeroSerial;
 
+    public Operacao(){}
 
     public Operacao(String geolocalizacao, String marca, String modelo, String cnpjcliente, String numeroSerial) {
         this.geolocalizacao = geolocalizacao;

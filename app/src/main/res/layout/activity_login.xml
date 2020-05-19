@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".LoginActivity">
+    tools:context=".activities.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,8 +26,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/usuario"
-        android:inputType="textPersonName"
-        android:text="@string/usuario" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editSenha"
@@ -37,8 +36,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/senha"
-        android:inputType="textPassword"
-        android:text="@string/senha" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/buttonAcesso"

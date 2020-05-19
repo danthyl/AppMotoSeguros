@@ -1,4 +1,4 @@
-package com.example.appmotoseguros;
+package com.example.appmotoseguros.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.appmotoseguros.activities.FormularioCompradorActivity;
+import com.example.appmotoseguros.R;
 
 public class MenuActivity extends AppCompatActivity {
 

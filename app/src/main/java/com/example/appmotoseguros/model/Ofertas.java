@@ -1,14 +1,35 @@
 package com.example.appmotoseguros.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Ofertas {
+public class Ofertas implements Serializable {
 
+    @Expose
+    @SerializedName("id")
     private final String id;
+
+    @Expose
+    @SerializedName("nome")
     private final String nome;
+
+    @Expose
+    @SerializedName("descricao")
     private final String descricao;
+
+    @Expose
+    @SerializedName("cobertura")
     private final String cobertura;
+
+    @Expose
+    @SerializedName("preco")
     private final BigDecimal preco;
+
+    @Expose
+    @SerializedName("fipe")
     private final String fipe;
 
     public Ofertas(String id, String nome, String descricao, String cobertura, BigDecimal preco, String fipe) {
@@ -41,7 +62,5 @@ public class Ofertas {
     public String getFipe() {
         return fipe;
     }
-
-
 
 }

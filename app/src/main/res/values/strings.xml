@@ -42,4 +42,8 @@
     <string name="questionario">QUESTIONÁRIO</string>
 
 
+    <!-- Mensagens de erro -->
+    <string name="msg_server_error">Ocorreu um erro inesperado no servidor. Tente novamente mais tarde.</string>
+    <string name="msg_invalid_login">Nome de usuário ou senha incorretos. Entre novamente com os dados.</string>
+
 </resources>

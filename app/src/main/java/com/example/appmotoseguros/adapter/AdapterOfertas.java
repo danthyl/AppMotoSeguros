@@ -3,7 +3,6 @@ package com.example.appmotoseguros.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.appmotoseguros.R;
 import com.example.appmotoseguros.model.Ofertas;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public class AdapterOfertas extends RecyclerView.Adapter<AdapterOfertas.MyViewHolder> {
