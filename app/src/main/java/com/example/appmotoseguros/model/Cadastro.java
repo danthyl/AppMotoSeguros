@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Cadastro implements Serializable {
 
-    private String getCpfCnpjComprador;
+    private String CpfCnpjComprador;
     private String datanascimento;
     private String sexo;
     private String estadoCivil;
@@ -34,14 +34,6 @@ public class Cadastro implements Serializable {
     private String cpfCnpjVendedor;
     private String numeroCelularVendedor;
     private String idLoja;
-
-    public String getGetCpfCnpjComprador() {
-        return getCpfCnpjComprador;
-    }
-
-    public void setGetCpfCnpjComprador(String getCpfCnpjComprador) {
-        this.getCpfCnpjComprador = getCpfCnpjComprador;
-    }
 
     public String getDatanascimento() {
         return datanascimento;
@@ -273,6 +265,14 @@ public class Cadastro implements Serializable {
 
     public void setIdLoja(String idLoja) {
         this.idLoja = idLoja;
+    }
+
+    public String getCpfCnpjComprador() {
+        return CpfCnpjComprador;
+    }
+
+    public void setCpfCnpjComprador(String cpfCnpjComprador) {
+        CpfCnpjComprador = cpfCnpjComprador;
     }
 }
 

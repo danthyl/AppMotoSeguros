@@ -64,14 +64,14 @@ public class LoginActivity extends AppCompatActivity {
                             usuario.setNome(campoUsuario.getText().toString());
                             SessionController.getInstance().login(usuario);
 
-                            callMenuPrincipal();
+                            carregaMenuPrincipal();
                         },
                         throwable -> {
                             Toast.makeText(LoginActivity.this, getString(R.string.msg_invalid_login), Toast.LENGTH_SHORT).show();
                         });
     }
 
-    public void callMenuPrincipal() {
+    public void carregaMenuPrincipal() {
         Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
         startActivity(intent);
         finish();

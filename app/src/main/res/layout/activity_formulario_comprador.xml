@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5dp">
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,6 +15,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_red_dark"
+                android:gravity="center"
                 android:padding="5dp"
                 android:text="@string/dados_do_vendedor"
                 android:textColor="@android:color/white"
@@ -35,7 +31,7 @@
                 android:ems="10"
                 android:hint="@string/cpf_do_vendedor"
                 android:inputType="number"
-                android:text="@string/cpf_do_vendedor" />
+                android:maxLength="14" />
 
             <EditText
                 android:id="@+id/editCelularVendedor"
@@ -46,13 +42,14 @@
                 android:ems="10"
                 android:hint="@string/celular_do_vendedor"
                 android:inputType="number"
-                android:text="@string/celular_do_vendedor" />
+                android:maxLength="14" />
 
             <TextView
                 android:id="@+id/titulo_dados_cliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_blue_dark"
+                android:gravity="center"
                 android:padding="5dp"
                 android:text="@string/dados_do_cliente"
                 android:textColor="@android:color/white"
@@ -68,7 +65,7 @@
                 android:ems="10"
                 android:hint="@string/data_de_nascimento"
                 android:inputType="date"
-                android:text="@string/data_de_nascimento" />
+                android:maxLength="10" />
 
             <EditText
                 android:id="@+id/editCpfCliente"
@@ -78,8 +75,8 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/cpf_do_cliente"
-                android:inputType="textPersonName"
-                android:text="@string/cpf_do_cliente"
+                android:inputType="number"
+                android:maxLength="14"
                 android:textSize="18sp" />
 
             <EditText
@@ -91,7 +88,7 @@
                 android:ems="10"
                 android:hint="@string/celular_do_cliente"
                 android:inputType="number"
-                android:text="@string/celular_do_cliente"
+                android:maxLength="14"
                 android:textSize="18sp" />
 
             <EditText
@@ -102,8 +99,8 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/confere_celular_do_cliente"
-                android:inputType="textPersonName"
-                android:text="@string/confere_celular_do_cliente"
+                android:inputType="number"
+                android:maxLength="14"
                 android:textSize="18sp" />
 
             <EditText
@@ -114,8 +111,8 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/cep"
-                android:inputType="textPersonName"
-                android:text="@string/cep"
+                android:inputType="number"
+                android:maxLength="9"
                 android:textSize="18sp" />
 
             <EditText
@@ -126,8 +123,7 @@
                 android:ems="10"
                 android:hint="@string/complemento"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/complemento" />
+                android:inputType="text|textNoSuggestions" />
 
             <EditText
                 android:id="@+id/editNumeroCliente"
@@ -138,7 +134,7 @@
                 android:ems="10"
                 android:hint="@string/numero"
                 android:inputType="textPersonName"
-                android:text="@string/numero"
+                android:maxLength="6"
                 android:textSize="18sp" />
 
             <Spinner
@@ -170,7 +166,7 @@
                 android:textColorLink="@android:color/holo_orange_light"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-        </LinearLayout>
-    </ScrollView>
 
-</LinearLayout>
+        </LinearLayout>
+
+</ScrollView>

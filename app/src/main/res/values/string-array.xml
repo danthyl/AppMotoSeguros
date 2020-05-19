@@ -68,8 +68,31 @@
         <item>SEPARADO</item>
         <item>DIVORCIADO</item>
         <item>VIUVO</item>
-
     </string-array>
 
+    <string-array name="Spinner_pergunta1">
+        <item>SIM, GARAGEM DA RESIDÊNCIA</item>
+        <item>SIM, GARAGEM DO CONDOMÍNIO</item>
+        <item>SIM, ESTACIONAMENTO</item>
+        <item>NÃO</item>
+    </string-array>
+
+    <string-array name="Spinner_pergunta2">
+        <item>NÃO UTILIZO PARA IR AO LOCAL DE TRABALHO E SERVIÇOS ESTERNOS</item>
+        <item>UTILIZO E GUARDA NO LOCAL DE TRABALHO/SERVIÇOS</item>
+        <item>UTILIZO, MAS NÃO TEM UM LOCAL PARA GUARDAR</item>
+    </string-array>
+
+    <string-array name="Spinner_pergunta3">
+        <item>NÃO UTILIZO PARA IR À ESCOLA</item>
+        <item>UTILIZO PARA IR A ESCOLA E GUARDO EM ESTACIONAMENTO</item>
+        <item>UTILIZO PARA IR A ESCOLA, MAS NÃO GUARDO EM ESTACIONAMENTO</item>
+    </string-array>
+
+    <string-array name="Spinner_tipoUtilizacao">
+        <item>LOCOMOÇÃO/IDA-RETORNO LOCAL FIXO DE TRABALHO/LAZER</item>
+        <item>ATIVIDADE PROFISSIONAL</item>
+        <item>LAZER EXCLUSIVAMENTE</item>
+    </string-array>
 
 </resources>

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.appmotoseguros.activities.MenuActivity;
 import com.example.appmotoseguros.R;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
@@ -16,7 +18,7 @@ public class FormularioCompradorActivity extends AppCompatActivity {
     private EditText campoCPFVendedor;
     private EditText campoCelularVendedor;
     private EditText campoCelularCliente;
-    private EditText campoCCelularCliente;
+    private EditText campoConfereCelularCliente;
     private EditText campoCPFCliente;
     private EditText campoCEPCliente;
     private EditText campoNumeroCliente;
@@ -36,9 +38,9 @@ public class FormularioCompradorActivity extends AppCompatActivity {
         MaskTextWatcher mtw = new MaskTextWatcher(campoCelularCliente, smfcc);
         campoCelularCliente.addTextChangedListener(mtw);
 
-        /*SimpleMaskFormatter smfccc = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
-        MaskTextWatcher mtwccc = new MaskTextWatcher(campoCCelularCliente, smfccc);
-        campoCCelularCliente.addTextChangedListener(mtwccc);*/
+        SimpleMaskFormatter smfccc = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
+        MaskTextWatcher mtwccc = new MaskTextWatcher(campoConfereCelularCliente, smfccc);
+        campoConfereCelularCliente.addTextChangedListener(mtwccc);
 
         SimpleMaskFormatter smfcv = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
         MaskTextWatcher mtwv = new MaskTextWatcher(campoCelularVendedor, smfcv);
@@ -72,7 +74,7 @@ public class FormularioCompradorActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, ListaOfertasActivity.class));
+                startActivity(new Intent(this, MenuActivity.class));
                 finishAffinity();
                 break;
             default:
@@ -84,6 +86,7 @@ public class FormularioCompradorActivity extends AppCompatActivity {
     private void inicializacaoDosCampos() {
         campoCPFVendedor = findViewById(R.id.editCpfVendedor);
         campoCelularVendedor = findViewById(R.id.editCelularVendedor);
+        campoConfereCelularCliente = findViewById(R.id.editConfereCelularCliente);
         campoCelularCliente = findViewById(R.id.editCelularCliente);
         campoCPFCliente = findViewById(R.id.editCpfCliente);
         campoCEPCliente = findViewById(R.id.editCepCliente);

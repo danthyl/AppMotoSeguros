@@ -39,7 +39,14 @@
     <string name="consulta_de_debito">CONSULTA DE DÉBITO</string>
     <string name="prestacao_de_servico">PRESTAÇÃO DE SERVIÇO</string>
     <string name="financiamento">FINANCIAMENTO</string>
-    <string name="questionario">QUESTIONÁRIO</string>
+    <string name="questionario">QUESTIONÁRIO DE USO</string>
+    <string name="pergunta1">Veículo é guardado em garagem/estacionamento fechado na residência?</string>
+    <string name="pergunta2">Veículo é guardado em garagem/estacionamento fechado quandoutilizado para na ir a local de trabalho?</string>
+    <string name="pergunta3">Veículo é guardado em garagem/estacionamento fechado quando utilizado para ir a faculdade/colégio?</string>
+    <string name="tipo_de_utilizacao">Tipo de Utilização</string>
+    <string name="dados_condutor">DADOS DO PRINCIPAL CONDUTOR</string>
+    <string name="cpf_do_condutor">CPF do CONDUTOR</string>
+    <string name="data_nascimento_do_condutor">DATA NASCIMENTO DO CONDUTOR</string>
 
 
     <!-- Mensagens de erro -->
