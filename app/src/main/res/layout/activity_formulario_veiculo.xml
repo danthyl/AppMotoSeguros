@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@android:color/holo_orange_dark"
+        android:gravity="center"
         android:text="@string/dados_do_veiculo"
         android:textColor="@android:color/white"
         android:textSize="25sp"
@@ -52,14 +53,8 @@
                 android:gravity="center"
                 android:hint="@string/placa_letras"
                 android:importantForAutofill="no"
-                android:inputType="textCapCharacters"
+                android:inputType="textNoSuggestions|textCapCharacters"
                 android:maxLength="3"
-                android:nextFocusLeft="@id/editPlacaNumeros"
-                android:nextFocusRight="@id/editPlacaNumeros"
-                android:nextFocusUp="@id/editPlacaNumeros"
-                android:nextFocusDown="@id/editPlacaNumeros"
-                android:nextFocusForward="@id/editPlacaNumeros"
-                android:text="@string/placa_letras"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="30sp" />
 
@@ -75,7 +70,6 @@
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="4"
-                android:text="@string/placa_numero"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="30sp" />
         </LinearLayout>
@@ -90,13 +84,15 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/editRenavam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:ems="10"
             android:hint="@string/campo_renavam"
             android:importantForAutofill="no"
-            android:inputType="textPersonName"
+            android:inputType="number"
+            android:maxLength="11"
             android:textColorHint="@android:color/darker_gray" />
 
         <TextView
@@ -108,16 +104,17 @@
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextQuilo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:ems="10"
-        android:hint="@string/campo_veiculo"
-        android:inputType="number|textPersonName"
-        android:textColorHint="@android:color/darker_gray"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/editQuilo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:hint="@string/campo_veiculo"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:maxLength="6"
+            android:textColorHint="@android:color/darker_gray" />
 
         <TextView
             android:id="@+id/subtitulo_foto"

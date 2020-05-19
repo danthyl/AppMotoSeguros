@@ -2,7 +2,7 @@ package com.example.appmotoseguros.model;
 
 public class Cadastro {
 
-    private String getCpfCnpjComprador;
+    private String CpfCnpjComprador;
     private String datanascimento;
     private String sexo;
     private String estadoCivil;

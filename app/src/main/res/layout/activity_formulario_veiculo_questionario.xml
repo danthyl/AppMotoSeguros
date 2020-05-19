@@ -1,17 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5dp">
 
-    <TextView
-        android:id="@+id/titulo_questionario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_dark"
-        android:text="@string/questionario"
-        android:textColor="@android:color/white"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulo_questionario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="@string/questionario"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/subtitulo_pergunta1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/pergunta1"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerPergunta1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_pergunta1" />
+
+            <TextView
+                android:id="@+id/subtitulo_pergunta2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/pergunta2"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerPergunta2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_pergunta2"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:id="@+id/subtitulo_pergunta3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/pergunta3"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerPergunta3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_pergunta3" />
+
+            <TextView
+                android:id="@+id/subtitulo_tipoUtilizacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/tipo_de_utilizacao"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerTipoUtilizacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_tipoUtilizacao" />
+
+            <TextView
+                android:id="@+id/subtitle_dados_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center"
+                android:text="@string/dados_condutor"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editCpfCondutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:maxLength="14"
+                android:ems="10"
+                android:hint="@string/cpf_do_condutor"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editDataCondutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="@string/data_nascimento_do_condutor"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:maxLength="9" />
+
+            <Spinner
+                android:id="@+id/spinnerGeneroCondutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_genero" />
+
+            <Spinner
+                android:id="@+id/spinnerEstadoCivilCondutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_estado_civil" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@android:color/black"
+                android:onClick="ChamaListaOfertas"
+                android:text="@string/proximo"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+</ScrollView>
+

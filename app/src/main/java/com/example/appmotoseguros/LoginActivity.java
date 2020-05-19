@@ -38,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         campoSenha = findViewById(R.id.editSenha);
         botaoLogin = findViewById(R.id.buttonAcesso);
 
+
+
         /*botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
