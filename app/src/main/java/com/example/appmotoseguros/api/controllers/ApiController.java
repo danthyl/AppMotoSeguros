@@ -92,6 +92,6 @@ public abstract class ApiController<T> {
     }
 
     public String generateAuthorizationHeaderFromToken(String token) {
-        return token;
+        return "Bearer" + token;
     }
 }

@@ -4,11 +4,19 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import com.example.appmotoseguros.api.interfaces.OfertasApiInterface;
-import com.example.appmotoseguros.api.interfaces.OperacaoApiInterface;
+import com.example.appmotoseguros.model.Ofertas;
+
+import java.util.List;
+
+import io.reactivex.Observable;
 
 public class OfertaApiController extends RxApiController<OfertasApiInterface> {
 
-    protected OfertaApiController(Context context, String baseUrl, Resources resources) {
+    public OfertaApiController(Context context, String baseUrl, Resources resources) {
         super(OfertasApiInterface.class, context, baseUrl, resources);
+    }
+
+    public Observable<List<Ofertas>> obterOfertas() {
+        return apiInterface.obterOfertas();
     }
 }

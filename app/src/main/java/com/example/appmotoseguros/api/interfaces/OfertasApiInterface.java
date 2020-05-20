@@ -1,14 +1,16 @@
 package com.example.appmotoseguros.api.interfaces;
 
-import com.example.appmotoseguros.model.Cadastro;
+import com.example.appmotoseguros.model.Ofertas;
 
-import retrofit2.Call;
+import java.util.List;
+
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 
 public interface OfertasApiInterface {
 
-    @Headers("Content-Type:application/json; charset-8")
+    @Headers("Content-Type:application/json")
     @GET("SolicitacaoOferta/Obter")
-    Call<Cadastro> ObterOferta();
+    Observable<List<Ofertas>> obterOfertas();
 }
