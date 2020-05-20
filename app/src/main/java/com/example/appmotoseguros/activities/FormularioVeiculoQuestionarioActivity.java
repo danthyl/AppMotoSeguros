@@ -90,10 +90,6 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
         adaptertipoutilizacao.setDropDownViewResource(android.R.layout.simple_selectable_list_item);
         spinnertipoutilizacao.setAdapter(adaptertipoutilizacao);
         spinnertipoutilizacao.setOnItemSelectedListener(this);
-
-
-
-
     }
 
     public void ChamaListaOfertas(View view) {
@@ -105,8 +101,10 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, FormularioVeiculoActivity.class));
-                finishAffinity();
+                //startActivity(new Intent(this, FormularioVeiculoActivity.class));
+                //finishAffinity();
+                onBackPressed();
+                finish();
                 break;
             default:
                 break;

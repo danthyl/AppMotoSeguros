@@ -1,6 +1,5 @@
 package com.example.appmotoseguros.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -24,8 +23,10 @@ public class ResumoCompraActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, ListaOfertasActivity.class));
-                finishAffinity();
+                //startActivity(new Intent(this, ListaOfertasActivity.class));
+                //finishAffinity();
+                onBackPressed();
+                finish();
                 break;
             default:
                 break;

@@ -75,13 +75,14 @@ public class ListaOfertasActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, FormularioVeiculoQuestionarioActivity.class));
-                finishAffinity();
+                //startActivity(new Intent(this, FormularioVeiculoQuestionarioActivity.class));
+                //finishAffinity();
+                onBackPressed();
+                finish();
                 break;
             default:
                 break;

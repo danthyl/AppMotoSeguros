@@ -43,15 +43,8 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
         }
 
-        imageFotoPainel = (ImageView) findViewById(R.id.imageViewFotoPainel);
-        findViewById(R.id.imageViewFotoPainel).setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                tirarFoto();
-            }
-        });
+        imageFotoPainel = findViewById(R.id.imageViewFotoPainel);
+        findViewById(R.id.imageViewFotoPainel).setOnClickListener(view -> tirarFoto());
 
 
     }
@@ -65,8 +58,10 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, FormularioCompradorActivity.class));
-                finishAffinity();
+                //startActivity(new Intent(this, FormularioCompradorActivity.class));
+                //finishAffinity();
+                onBackPressed();
+                finish();
                 break;
             default:
                 break;
@@ -79,7 +74,6 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         campoPlacaLetra = findViewById(R.id.editPlacaLetras);
         campoRenavam = findViewById(R.id.editRenavam);
         campoQuilometragem = findViewById(R.id.editQuilo);
-
     }
 
     private void tirarFoto() {
