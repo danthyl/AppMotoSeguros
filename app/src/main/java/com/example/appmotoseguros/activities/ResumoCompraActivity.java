@@ -1,12 +1,14 @@
 package com.example.appmotoseguros.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appmotoseguros.R;
+
+import java.util.Objects;
 
 public class ResumoCompraActivity extends AppCompatActivity {
 
@@ -14,18 +16,22 @@ public class ResumoCompraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_compra);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("");//Sem título
 
+        configuraActionBar();
+    }
+
+    private void configuraActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("");
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, ListaOfertasActivity.class));
-                finishAffinity();
+                onBackPressed();
+                finish();
                 break;
             default:
                 break;
