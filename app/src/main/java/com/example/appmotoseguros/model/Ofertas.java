@@ -26,13 +26,13 @@ public class Ofertas implements Serializable {
 
     @Expose
     @SerializedName("preco")
-    private final BigDecimal preco;
+    private final String preco;
 
     @Expose
     @SerializedName("fipe")
     private final String fipe;
 
-    public Ofertas(String id, String nome, String descricao, String cobertura, BigDecimal preco, String fipe) {
+    public Ofertas(String id, String nome, String descricao, String cobertura, String preco, String fipe) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -55,7 +55,7 @@ public class Ofertas implements Serializable {
 
     public String getCobertura() { return cobertura; }
 
-    public BigDecimal getPreco() {
+    public String getPreco() {
         return preco;
     }
 

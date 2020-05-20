@@ -62,7 +62,6 @@ public class FormularioCompradorActivity extends AppCompatActivity {
         MaskTextWatcher mtwdata = new MaskTextWatcher(campoDataCliente, data);
         campoDataCliente.addTextChangedListener(mtwdata);
 
-
     }
 
     public void ChamaFormularioVeiculo(View view) {

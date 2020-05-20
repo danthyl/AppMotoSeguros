@@ -52,19 +52,19 @@ public class ListaOfertasActivity extends AppCompatActivity {
 
     private void criarOfertas() {
 
-        Ofertas ofertas = new Ofertas("293", "Mapfre - Garantia Motor e Câmbio", "Regras de Recusa", "Regras de Recusa", new BigDecimal(750.00), "32801");
+        Ofertas ofertas = new Ofertas("293", "Mapfre - Garantia Motor e Câmbio", "Regras de Recusa", "Regras de Recusa", "750.00", "32801");
         this.listaofertas.add(ofertas);
 
-        ofertas = new Ofertas("294", "Mapfre - Garantia Motor e Cambio e Suspensão", "Regras de Recusa", "Regras de Recusa", new BigDecimal(900.00), "32801");
+        ofertas = new Ofertas("294", "Mapfre - Garantia Motor e Cambio e Suspensão", "Regras de Recusa", "Regras de Recusa", "900.00", "32801");
         this.listaofertas.add(ofertas);
 
-        ofertas = new Ofertas("295", "Mapfre - Motor, Cambio, Suspensão e Pane Eletrica", "Regras de Recusa", "Regras de Recusa", new BigDecimal(1100.00), "32801");
+        ofertas = new Ofertas("295", "Mapfre - Motor, Cambio, Suspensão e Pane Eletrica", "Regras de Recusa", "Regras de Recusa", "1100.00", "32801");
         this.listaofertas.add(ofertas);
 
-        ofertas = new Ofertas("296", "Dekra - Vistoria Veicular para Transferência", "Voucher para vistoria de compra e venda de veiculos", "Voucher p/ vistoria de compra e venda de veiculos", new BigDecimal(120.00), "32801");
+        ofertas = new Ofertas("296", "Dekra - Vistoria Veicular para Transferência", "Voucher para vistoria de compra e venda de veiculos", "Voucher p/ vistoria de compra e venda de veiculos", "120.00", "32801");
         this.listaofertas.add(ofertas);
 
-        ofertas = new Ofertas("297", "Dekra - Vistoria Veicular Cautelar", "Voucher para vistoria cautelar", "Voucher para vistoria cautelar", new BigDecimal(200.00), "32801");
+        ofertas = new Ofertas("297", "Dekra - Vistoria Veicular Cautelar", "Voucher para vistoria cautelar", "Voucher para vistoria cautelar", "200.00", "32801");
         this.listaofertas.add(ofertas);
 
     }

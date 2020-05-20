@@ -14,6 +14,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    /*signingConfigs {
+        debug {
+            storeFile file("C:/key/Development_GertecDeveloper_CustomerAPP.jks")
+            storePassword "Development@GertecDeveloper2018"
+            keyAlias "developmentgertecdeveloper_customerapp"
+            keyPassword "Development@GertecDeveloper2018"
+        }
+    }*/
+
     buildTypes {
         release {
             minifyEnabled false
@@ -51,4 +60,5 @@ dependencies {
 
     //UI
     implementation 'com.bigkoo:svprogresshud:1.0.6'
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
     <TextView
@@ -14,6 +15,14 @@
         android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/textDescricaoOferta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/descricao"
+        android:textSize="15sp" />
+
+    <TextView
         android:id="@+id/textPrecoOferta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,14 +32,6 @@
         android:text="@string/preco"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textDescricaoOferta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/descricao"
-        android:textSize="15sp" />
 
 
 </LinearLayout>

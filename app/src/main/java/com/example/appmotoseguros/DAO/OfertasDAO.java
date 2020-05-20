@@ -10,7 +10,7 @@ import java.util.List;
 
 public class OfertasDAO {
 
-    public List<Ofertas> lista() {
+  /*  public List<Ofertas> lista() {
         List<Ofertas> ofertas = new ArrayList<>(Arrays.asList(
                 new Ofertas("293", "Mapfre - Garantia Motor e Câmbio", "Regras de Recusa", "Regras de Recusa", new BigDecimal(750.00), "32801"),
                 new Ofertas("294", "Mapfre - Garantia Motor e Cambio e Suspensão", "Regras de Recusa", "Regras de Recusa", new BigDecimal(900.00), "32801"),
@@ -20,7 +20,7 @@ public class OfertasDAO {
 
         ));
         return ofertas;
-    }
+    }*/
 
 
 
