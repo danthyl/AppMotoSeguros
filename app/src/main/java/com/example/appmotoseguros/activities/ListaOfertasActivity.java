@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,6 +19,7 @@ import com.example.appmotoseguros.model.Ofertas;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ListaOfertasActivity extends AppCompatActivity {
 
@@ -28,18 +30,23 @@ public class ListaOfertasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_ofertas);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("");//Sem título
 
+        configuraActionBar();
+
+        inicializacaoDosCampos();
+    }
+
+    private void configuraActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("");
+    }
+
+    private void inicializacaoDosCampos() {
         recyclerView = findViewById(R.id.recycleListaOfertas);
-
-        //Lista Local de teste
-        this.criarOfertas();
 
         //Configurar adapter
         AdapterOfertas adapterOfertas = new AdapterOfertas(listaofertas);
-
 
         //Configurar recycleview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -48,6 +55,8 @@ public class ListaOfertasActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapterOfertas);
         recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
 
+        //Lista Local de teste
+        this.criarOfertas();
     }
 
     private void criarOfertas() {

@@ -9,10 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.appmotoseguros.R;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
+
+import java.util.Objects;
 
 public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -23,19 +26,23 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_veiculo_questionario);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("");//Sem título
+
+        configuraActionBar();
+
         inicializacaoDosCampos();
 
-        SimpleMaskFormatter cpfc = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
-        MaskTextWatcher mtwcpfcliente = new MaskTextWatcher(campoCPFCondutor, cpfc);
-        campoCPFCondutor.addTextChangedListener(mtwcpfcliente);
+        inicializacaoMascaras();
+    }
 
-        SimpleMaskFormatter datac = new SimpleMaskFormatter("NN/NN/NNNN");
-        MaskTextWatcher mtwdatacondutor = new MaskTextWatcher(campoDataCondutor, datac);
-        campoDataCondutor.addTextChangedListener(mtwdatacondutor);
+    private void configuraActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("");
+    }
 
+    private void inicializacaoDosCampos() {
+        campoCPFCondutor = findViewById(R.id.editCpfCondutor);
+        campoDataCondutor = findViewById(R.id.editDataCondutor);
 
         Spinner spinnerestadocivilcondutor = findViewById(R.id.spinnerEstadoCivilCondutor);
         ArrayAdapter<CharSequence> adapterestadocivilcondutor = ArrayAdapter.createFromResource(
@@ -92,6 +99,16 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
         spinnertipoutilizacao.setOnItemSelectedListener(this);
     }
 
+    private void inicializacaoMascaras() {
+        SimpleMaskFormatter cpfc = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
+        MaskTextWatcher mtwcpfcliente = new MaskTextWatcher(campoCPFCondutor, cpfc);
+        campoCPFCondutor.addTextChangedListener(mtwcpfcliente);
+
+        SimpleMaskFormatter datac = new SimpleMaskFormatter("NN/NN/NNNN");
+        MaskTextWatcher mtwdatacondutor = new MaskTextWatcher(campoDataCondutor, datac);
+        campoDataCondutor.addTextChangedListener(mtwdatacondutor);
+    }
+
     public void ChamaListaOfertas(View view) {
         Intent intent = new Intent(FormularioVeiculoQuestionarioActivity.this, ListaOfertasActivity.class);
         startActivity(intent);
@@ -110,12 +127,6 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
                 break;
         }
         return true;
-    }
-
-    private void inicializacaoDosCampos() {
-        campoCPFCondutor = findViewById(R.id.editCpfCondutor);
-        campoDataCondutor = findViewById(R.id.editDataCondutor);
-
     }
 
     @Override

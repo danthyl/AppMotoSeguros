@@ -12,12 +12,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.appmotoseguros.R;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
+
+import java.util.Objects;
 
 public class FormularioVeiculoActivity extends AppCompatActivity {
 
@@ -31,22 +34,36 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_veiculo);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("");//Sem título
+
+        configuraActionBar();
+
         inicializacaoDosCampos();
+
+        checaPermissoes();
+    }
+
+    private void configuraActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("");
+    }
+
+    private void inicializacaoDosCampos() {
+        campoPlacaNumero = findViewById(R.id.editPlacaNumeros);
+        campoPlacaLetra = findViewById(R.id.editPlacaLetras);
+        campoRenavam = findViewById(R.id.editRenavam);
+        campoQuilometragem = findViewById(R.id.editQuilo);
 
         campoPlacaLetra.requestFocus();
 
+        imageFotoPainel = findViewById(R.id.imageViewFotoPainel);
+        findViewById(R.id.imageViewFotoPainel).setOnClickListener(view -> tirarFoto());
+    }
 
+    private void checaPermissoes() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
         }
-
-        imageFotoPainel = findViewById(R.id.imageViewFotoPainel);
-        findViewById(R.id.imageViewFotoPainel).setOnClickListener(view -> tirarFoto());
-
-
     }
 
     public void ChamaFormularioQuestionario(View view) {
@@ -67,13 +84,6 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
                 break;
         }
         return true;
-    }
-
-    private void inicializacaoDosCampos() {
-        campoPlacaNumero = findViewById(R.id.editPlacaNumeros);
-        campoPlacaLetra = findViewById(R.id.editPlacaLetras);
-        campoRenavam = findViewById(R.id.editRenavam);
-        campoQuilometragem = findViewById(R.id.editQuilo);
     }
 
     private void tirarFoto() {

@@ -1,17 +1,22 @@
 package com.example.appmotoseguros.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appmotoseguros.activities.MenuActivity;
 import com.example.appmotoseguros.R;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
+
+import java.util.Objects;
 
 public class FormularioCompradorActivity extends AppCompatActivity {
 
@@ -29,11 +34,34 @@ public class FormularioCompradorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_comprador);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("");//Sem título
+
+        configuraActionBar();
+
         inicializacaoDosCampos();
 
+        inicializacaoMascaras();
+    }
+
+    private void configuraActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("");
+    }
+
+    private void inicializacaoDosCampos() {
+        campoCPFVendedor = findViewById(R.id.editCpfVendedor);
+        campoCelularVendedor = findViewById(R.id.editCelularVendedor);
+        campoConfereCelularCliente = findViewById(R.id.editConfereCelularCliente);
+        campoCelularCliente = findViewById(R.id.editCelularCliente);
+        campoCPFCliente = findViewById(R.id.editCpfCliente);
+        campoCEPCliente = findViewById(R.id.editCepCliente);
+        campoNumeroCliente = findViewById(R.id.editNumeroCliente);
+        campoComplementoCliente = findViewById(R.id.editComplementoCliente);
+        campoDataCliente = findViewById(R.id.editDataNascimento);
+
+    }
+
+    private void inicializacaoMascaras() {
         SimpleMaskFormatter smfcc = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
         MaskTextWatcher mtw = new MaskTextWatcher(campoCelularCliente, smfcc);
         campoCelularCliente.addTextChangedListener(mtw);
@@ -61,8 +89,6 @@ public class FormularioCompradorActivity extends AppCompatActivity {
         SimpleMaskFormatter data = new SimpleMaskFormatter("NN/NN/NNNN");
         MaskTextWatcher mtwdata = new MaskTextWatcher(campoDataCliente, data);
         campoDataCliente.addTextChangedListener(mtwdata);
-
-
     }
 
     public void ChamaFormularioVeiculo(View view) {
@@ -74,25 +100,14 @@ public class FormularioCompradorActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(this, MenuActivity.class));
-                finishAffinity();
+//                startActivity(new Intent(this, MenuActivity.class));
+//                finishAffinity();
+                onBackPressed();
+                finish();
                 break;
             default:
                 break;
         }
         return true;
-    }
-
-    private void inicializacaoDosCampos() {
-        campoCPFVendedor = findViewById(R.id.editCpfVendedor);
-        campoCelularVendedor = findViewById(R.id.editCelularVendedor);
-        campoConfereCelularCliente = findViewById(R.id.editConfereCelularCliente);
-        campoCelularCliente = findViewById(R.id.editCelularCliente);
-        campoCPFCliente = findViewById(R.id.editCpfCliente);
-        campoCEPCliente = findViewById(R.id.editCepCliente);
-        campoNumeroCliente = findViewById(R.id.editNumeroCliente);
-        campoComplementoCliente = findViewById(R.id.editComplementoCliente);
-        campoDataCliente = findViewById(R.id.editDataNascimento);
-
     }
 }
