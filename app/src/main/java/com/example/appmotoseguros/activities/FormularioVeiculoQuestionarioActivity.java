@@ -16,8 +16,7 @@ import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private EditText campoCPFCondutor;
-    private EditText campoDataCondutor;
+    private EditText campoCPFCondutor, campoDataCondutor;
 
 
     @Override

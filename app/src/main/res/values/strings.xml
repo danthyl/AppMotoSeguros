@@ -32,7 +32,7 @@
     <string name="renavam">RENAVAM</string>
     <string name="campo_renavam">Número de 11 digitos</string>
     <string name="quilometragem">QUILOMETRAGEM</string>
-    <string name="campo_veiculo">Veículos com até 90.000</string>
+    <string name="campo_veiculo">Veículos com até 90000</string>
     <string name="foto_da_quilometragem">FOTO DA QUILOMETRAGEM</string>
     <string name="finalizar_pedido">FINALIZAR PEDIDO</string>
     <string name="servicos_e_seguros">SERVIÇOS E SEGUROS</string>
