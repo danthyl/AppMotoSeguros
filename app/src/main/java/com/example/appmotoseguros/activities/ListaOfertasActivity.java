@@ -1,10 +1,12 @@
 package com.example.appmotoseguros.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +14,11 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.example.appmotoseguros.R;
 import com.example.appmotoseguros.adapter.AdapterOfertas;
+import com.example.appmotoseguros.api.controllers.OfertaApiController;
+import com.example.appmotoseguros.api.session.SessionController;
 import com.example.appmotoseguros.model.Ofertas;
 
 import java.math.BigDecimal;
@@ -21,10 +26,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+
 public class ListaOfertasActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<Ofertas> listaofertas = new ArrayList<>();
+
+    private AdapterOfertas adapterOfertas;
+
+    private SVProgressHUD progressHUD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +56,12 @@ public class ListaOfertasActivity extends AppCompatActivity {
     }
 
     private void inicializacaoDosCampos() {
+        progressHUD = new SVProgressHUD(this);
+
         recyclerView = findViewById(R.id.recycleListaOfertas);
 
         //Configurar adapter
-        AdapterOfertas adapterOfertas = new AdapterOfertas(listaofertas);
+        adapterOfertas = new AdapterOfertas(this);
 
         //Configurar recycleview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -56,7 +71,8 @@ public class ListaOfertasActivity extends AppCompatActivity {
         recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
 
         //Lista Local de teste
-        this.criarOfertas();
+        criarOfertas();
+        //TODO listarOfertas();
     }
 
     private void criarOfertas() {
@@ -75,9 +91,28 @@ public class ListaOfertasActivity extends AppCompatActivity {
 
         ofertas = new Ofertas("297", "Dekra - Vistoria Veicular Cautelar", "Voucher para vistoria cautelar", "Voucher para vistoria cautelar", "200.00", "32801");
         this.listaofertas.add(ofertas);
-
     }
 
+    @SuppressLint("CheckResult")
+    private void listarOfertas() {
+
+        progressHUD.show();
+
+        OfertaApiController controller = new OfertaApiController(this, getString(R.string.api_endpoint_dev), getResources());
+        Observable<List<Ofertas>> call = controller.obterOfertas();
+
+        call.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(authResponse -> {
+                            adapterOfertas.addAll(authResponse);
+
+                            progressHUD.dismiss();
+                        },
+                        throwable -> {
+                            progressHUD.dismiss();
+                            Toast.makeText(ListaOfertasActivity.this, getString(R.string.msg_invalid_login), Toast.LENGTH_SHORT).show();
+                        });
+    }
 
     public void ChamaResumoCompra(View view) {
         Intent intent = new Intent(ListaOfertasActivity.this, ResumoCompraActivity.class);

@@ -71,4 +71,10 @@ public class SessionController {
         this.currentUser.setNome(sharedPref.getString("nome", null));
         this.currentUser.setToken(sharedPref.getString("token", null));
     }
+
+    public String getToken() {
+        return this.currentUser.getToken() == null ?
+                sharedPref.getString("token", null) :
+                this.currentUser.getToken();
+    }
 }
