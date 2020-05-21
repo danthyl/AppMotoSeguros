@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -18,10 +19,9 @@ import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.example.appmotoseguros.R;
 import com.example.appmotoseguros.adapter.AdapterOfertas;
 import com.example.appmotoseguros.api.controllers.OfertaApiController;
-import com.example.appmotoseguros.api.session.SessionController;
+import com.example.appmotoseguros.listener.RecyclerItemClickListerner;
 import com.example.appmotoseguros.model.Ofertas;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -44,9 +44,33 @@ public class ListaOfertasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_ofertas);
 
-        configuraActionBar();
+        //configuraActionBar();
 
         inicializacaoDosCampos();
+
+        //Configurar evento de clique
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListerner(
+                        this,
+                        recyclerView,
+                        new RecyclerItemClickListerner.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+                        }
+                )
+        );
     }
 
     private void configuraActionBar() {
@@ -115,7 +139,7 @@ public class ListaOfertasActivity extends AppCompatActivity {
     }
 
     public void ChamaResumoCompra(View view) {
-        Intent intent = new Intent(ListaOfertasActivity.this, ResumoCompraActivity.class);
+        Intent intent = new Intent(ListaOfertasActivity.this, PedidoActivity.class);
         startActivity(intent);
     }
 

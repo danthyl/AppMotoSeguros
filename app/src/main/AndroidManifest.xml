@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
 
-        <activity android:name=".activities.ResumoCompraActivity"/>
+        <activity android:name=".activities.PedidoActivity"/>
         <activity android:name=".activities.ListaOfertasActivity"/>
         <activity android:name=".activities.FormularioVeiculoQuestionarioActivity"/>
         <activity android:name=".activities.FormularioVeiculoActivity"/>

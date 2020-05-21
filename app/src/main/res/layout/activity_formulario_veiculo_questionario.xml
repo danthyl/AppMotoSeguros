@@ -115,14 +115,7 @@
                 android:hint="@string/data_nascimento_do_condutor"
                 android:importantForAutofill="no"
                 android:inputType="date"
-                android:maxLength="9" />
-
-            <Spinner
-                android:id="@+id/spinnerGeneroCondutor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:entries="@array/Spinner_genero" />
+                android:maxLength="10" />
 
             <Spinner
                 android:id="@+id/spinnerEstadoCivilCondutor"
@@ -130,6 +123,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:entries="@array/Spinner_estado_civil" />
+
+            <Spinner
+                android:id="@+id/spinnerGeneroCondutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:entries="@array/Spinner_genero" />
 
             <Button
                 android:id="@+id/button"
@@ -139,7 +139,7 @@
                 android:background="@android:color/black"
                 android:onClick="ChamaListaOfertas"
                 android:text="@string/proximo"
-                android:textColor="@android:color/holo_orange_dark"
+                android:textColor="@android:color/holo_orange_light"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

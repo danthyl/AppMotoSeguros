@@ -10,12 +10,12 @@ import com.example.appmotoseguros.R;
 
 import java.util.Objects;
 
-public class ResumoCompraActivity extends AppCompatActivity {
+public class PedidoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resumo_compra);
+        setContentView(R.layout.activity_pedido);
 
         configuraActionBar();
     }
