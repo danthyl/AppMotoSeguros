@@ -116,16 +116,6 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editComplementoCliente"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:ems="10"
-                android:hint="@string/complemento"
-                android:importantForAutofill="no"
-                android:inputType="text|textNoSuggestions" />
-
-            <EditText
                 android:id="@+id/editNumeroCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,6 +126,16 @@
                 android:inputType="textPersonName"
                 android:maxLength="6"
                 android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editComplementoCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ems="10"
+                android:hint="@string/complemento"
+                android:importantForAutofill="no"
+                android:inputType="text|textNoSuggestions" />
 
             <Spinner
                 android:id="@+id/spinnerEstadoCivilCliente"
