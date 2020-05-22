@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.example.appmotoseguros.R;
 import com.example.appmotoseguros.api.controllers.LoginApiController;
 import com.example.appmotoseguros.api.response.LoginResponse;
@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText campoUsuario;
     private EditText campoSenha;
     private Button botaoLogin;
+
+    private SVProgressHUD progressHUD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         campoUsuario = findViewById(R.id.editUsuario);
         campoSenha = findViewById(R.id.editSenha);
         botaoLogin = findViewById(R.id.buttonAcesso);
+
+        progressHUD = new SVProgressHUD(this);
     }
 
     private void setListeners() {
@@ -52,6 +56,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @SuppressLint("CheckResult")
     private void login() {
+
+        progressHUD.setText("Autenticando");
+        progressHUD.show();
 
         LoginApiController controller = new LoginApiController(this, getString(R.string.api_endpoint_dev),
                 getResources());
@@ -65,9 +72,11 @@ public class LoginActivity extends AppCompatActivity {
                             usuario.setNome(campoUsuario.getText().toString());
                             SessionController.getInstance().login(usuario);
 
+                            progressHUD.dismiss();
                             carregaMenuPrincipal();
                         },
                         throwable -> {
+                            progressHUD.dismiss();
                             Toast.makeText(LoginActivity.this, getString(R.string.msg_invalid_login), Toast.LENGTH_SHORT).show();
                         });
     }

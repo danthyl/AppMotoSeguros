@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -19,8 +19,12 @@ import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.example.appmotoseguros.R;
 import com.example.appmotoseguros.adapter.AdapterOfertas;
 import com.example.appmotoseguros.api.controllers.OfertaApiController;
-import com.example.appmotoseguros.listener.RecyclerItemClickListerner;
+import com.example.appmotoseguros.api.request.CadastroRequest;
+import com.example.appmotoseguros.model.Comprador;
 import com.example.appmotoseguros.model.Ofertas;
+import com.example.appmotoseguros.model.Veiculo;
+import com.example.appmotoseguros.model.Vendedor;
+import com.example.appmotoseguros.utils.RVHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,9 @@ public class ListaOfertasActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Ofertas> listaofertas = new ArrayList<>();
 
+    private TextView textItensQtd;
+//    private TextView textItensTotal;
+
     private AdapterOfertas adapterOfertas;
 
     private SVProgressHUD progressHUD;
@@ -44,33 +51,11 @@ public class ListaOfertasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_ofertas);
 
-        //configuraActionBar();
+        configuraActionBar();
 
         inicializacaoDosCampos();
 
-        //Configurar evento de clique
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListerner(
-                        this,
-                        recyclerView,
-                        new RecyclerItemClickListerner.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            }
-
-                            @Override
-                            public void onItemClick(View view, int position) {
-
-                            }
-
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-
-                            }
-                        }
-                )
-        );
+        inicializacaoListener();
     }
 
     private void configuraActionBar() {
@@ -94,9 +79,18 @@ public class ListaOfertasActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapterOfertas);
         recyclerView.addItemDecoration( new DividerItemDecoration(this, LinearLayout.VERTICAL));
 
+        textItensQtd = findViewById(R.id.textItensQtd);
+        //textItensTotal  = findViewById(R.id.textItensTotal);
+
         //Lista Local de teste
-        criarOfertas();
-        //TODO listarOfertas();
+        //criarOfertas();
+        listarOfertas();
+    }
+
+    private void inicializacaoListener() {
+        RVHelper.addTo(recyclerView).setOnItemClickListener((recyclerView, position, v) -> {
+
+        });
     }
 
     private void criarOfertas() {
@@ -117,24 +111,38 @@ public class ListaOfertasActivity extends AppCompatActivity {
         this.listaofertas.add(ofertas);
     }
 
-    @SuppressLint("CheckResult")
+    @SuppressLint({"CheckResult", "DefaultLocale", "SetTextI18n"})
     private void listarOfertas() {
 
         progressHUD.show();
 
         OfertaApiController controller = new OfertaApiController(this, getString(R.string.api_endpoint_dev), getResources());
-        Observable<List<Ofertas>> call = controller.obterOfertas();
+        CadastroRequest request = new CadastroRequest();
+        request.setComprador((Comprador)getIntent().getSerializableExtra("objeto_comprador"));
+        request.setVeiculo((Veiculo)getIntent().getSerializableExtra("objeto_veiculo"));
+        request.setVendedor(carregaVendedorTeste());
+        Observable<List<Ofertas>> call = controller.obterOfertas(request);
 
         call.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(authResponse -> {
                             adapterOfertas.addAll(authResponse);
 
+                            float total = 0.0f;
+
+                            for(Ofertas oferta : authResponse){
+                                float tempPrice = Float.parseFloat(oferta.getPreco().replaceAll("[^\\d.]", ""));
+                                total += tempPrice;
+                            }
+
+                            textItensQtd.setText("ITENS QTD. " + adapterOfertas.getItemCount() +
+                                    " - R$" + String.format("%.2f", total));
+
                             progressHUD.dismiss();
                         },
                         throwable -> {
                             progressHUD.dismiss();
-                            Toast.makeText(ListaOfertasActivity.this, getString(R.string.msg_invalid_login), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ListaOfertasActivity.this, getString(R.string.msg_error_load_data), Toast.LENGTH_SHORT).show();
                         });
     }
 
@@ -156,5 +164,14 @@ public class ListaOfertasActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    private Vendedor carregaVendedorTeste(){
+        Vendedor vendedor = new Vendedor();
+        vendedor.setCpfCnpjVendedor("40442820135");
+        vendedor.setNumeroCelularVendedor("11966100936");
+        vendedor.setIdloja("104");
+
+        return vendedor;
     }
 }

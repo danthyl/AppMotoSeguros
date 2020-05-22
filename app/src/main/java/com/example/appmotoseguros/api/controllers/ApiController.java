@@ -6,11 +6,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.appmotoseguros.R;
-import com.google.gson.JsonDeserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -54,29 +52,36 @@ public abstract class ApiController<T> {
     }
 
     protected String getBaseUrl(){
-        return baseUrl;
+        return baseUrl;/*resources.getString(android.R.string.api_endpoint);*/
     }
 
     protected void initializeRetrofit(){
-        GsonBuilder gsonBuilder = new GsonBuilder()
-                .disableHtmlEscaping();
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+                .disableHtmlEscaping()
+                .create();
 
-        gsonBuilder.registerTypeAdapter(Date.class, (JsonDeserializer<Date>) (json, typeOfT, context) -> new Date(json.getAsJsonPrimitive().getAsLong()));
-
-        Gson gson = gsonBuilder.create();
-
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(message -> Log.i("OkHttp", message));
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override public void log(String message) {
+                Log.i("OkHttp", message);
+            }
+        });
+//        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .addInterceptor(interceptor)
                 .build();
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(getBaseUrl())
+                .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
+
     }
 
     public void displayGenericServerError(){
@@ -92,6 +97,6 @@ public abstract class ApiController<T> {
     }
 
     public String generateAuthorizationHeaderFromToken(String token) {
-        return "Bearer" + token;
+        return "Bearer " + token;
     }
 }

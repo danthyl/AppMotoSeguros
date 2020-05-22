@@ -1,6 +1,7 @@
 package com.example.appmotoseguros.activities;
 
 import android.Manifest;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -10,15 +11,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.appmotoseguros.R;
-import com.github.rtoshiro.util.format.SimpleMaskFormatter;
-import com.github.rtoshiro.util.format.text.MaskTextWatcher;
+import com.example.appmotoseguros.api.request.CadastroRequest;
+import com.example.appmotoseguros.model.Comprador;
+import com.example.appmotoseguros.model.Endereco;
+import com.example.appmotoseguros.model.PrincipalCondutor;
 
 import java.util.Objects;
 
@@ -67,8 +70,16 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
     }
 
     public void ChamaFormularioQuestionario(View view) {
-        Intent intent = new Intent(FormularioVeiculoActivity.this, FormularioVeiculoQuestionarioActivity.class);
-        startActivity(intent);
+   //TODO     if(comprador != null) {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("objeto_comprador", carregaCompradorTeste());
+            Intent intent = new Intent(FormularioVeiculoActivity.this, FormularioVeiculoQuestionarioActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
+//        } else {
+//            Toast.makeText(this, "Precisamos dos dados do comprador, por favor preencha os dados.",
+//                    Toast.LENGTH_SHORT).show();;
+//        }
     }
 
     @Override
@@ -97,7 +108,40 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
             Bitmap imagem = (Bitmap) extras.get("data");
             imageFotoPainel.setImageBitmap(imagem);
         }
-        super.onActivityResult(requestCode, resultCode, data);
 
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private Comprador carregaCompradorTeste() {
+        Comprador comprador = new Comprador();
+        comprador.setCpfCnpj("40442820135");
+        comprador.setDatanascimento("15111991");
+        comprador.setSexo("2");
+        comprador.setEstadoCivil("1");
+
+        Endereco endereco = new Endereco();
+        endereco.setCep("07713030");
+        endereco.setComplemento("Casa");
+        endereco.setNumero("48");
+        comprador.setEndereco(endereco);
+
+        comprador.setNumeroCelular("11966200936");
+        comprador.setPossuiOutroVeic("1");
+        comprador.setTipoContratacao("1");
+        comprador.setUtilizacaoDut("1");
+        comprador.setTipoContratacao("3");
+        comprador.setPergunta1("1");
+        comprador.setPergunta2("1");
+        comprador.setPergunta3("1");
+
+        PrincipalCondutor principalCondutor = new PrincipalCondutor();
+        principalCondutor.setCpfCnpj("40442820135");
+        principalCondutor.setNome("Eric Aparecido da silva tunú");
+        principalCondutor.setSexo("2");
+        principalCondutor.setEstadoCivil("1");
+        principalCondutor.setDatanascimento("15111991");
+        comprador.setPrincipalCondutor(principalCondutor);
+
+        return comprador;
     }
 }

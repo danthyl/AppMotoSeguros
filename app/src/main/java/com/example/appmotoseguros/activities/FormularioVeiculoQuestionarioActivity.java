@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.appmotoseguros.R;
+import com.example.appmotoseguros.model.Comprador;
+import com.example.appmotoseguros.model.Veiculo;
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
@@ -21,17 +23,24 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
 
     private EditText campoCPFCondutor, campoDataCondutor;
 
+    private Comprador comprador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_veiculo_questionario);
 
+        carregaArgumentos();
+
         configuraActionBar();
 
         inicializacaoDosCampos();
 
         inicializacaoMascaras();
+    }
+
+    private void carregaArgumentos(){
+        comprador = (Comprador) getIntent().getSerializableExtra("objeto_comprador");
     }
 
     private void configuraActionBar() {
@@ -110,7 +119,11 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
     }
 
     public void ChamaListaOfertas(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("objeto_comprador", comprador);
+        bundle.putSerializable("objeto_veiculo", carregaVeiculoTeste());
         Intent intent = new Intent(FormularioVeiculoQuestionarioActivity.this, ListaOfertasActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 
@@ -137,5 +150,16 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    private Veiculo carregaVeiculoTeste(){
+        Veiculo veiculo = new Veiculo();
+        veiculo.setComprovanteKilometragem("xxxxxxxxxxxxxxxxxxxx");
+        veiculo.setKilometragem("34000");
+        veiculo.setPlaca("EON9890");
+        veiculo.setRenavan("00412745780");
+        veiculo.setNumeroChassi("");
+
+        return veiculo;
     }
 }

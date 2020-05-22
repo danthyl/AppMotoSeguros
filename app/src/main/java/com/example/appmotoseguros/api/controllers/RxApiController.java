@@ -7,12 +7,12 @@ import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonDeserializer;
 
+import java.io.IOException;
 import java.net.ProtocolException;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
@@ -33,56 +33,64 @@ public abstract class RxApiController<T> extends ApiController<T> {
     @Override
     protected void initializeRetrofit(){
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.addNetworkInterceptor(chain -> {
-            Response response;
-            try {
-                response = chain.proceed(chain.request());
-            } catch (ProtocolException e) {
-                response = new Response.Builder()
-                        .request(chain.request())
-                        .code(204)
-                        .addHeader("Content-Type", "application/json")
-                        .protocol(Protocol.HTTP_1_1)
-                        .message("normal delete, move along")
-                        .body(new ResponseBody() {
-                            @Nullable
-                            @Override
-                            public MediaType contentType() {
-                                return null;
-                            }
+        builder.cache(null);
+        builder.addNetworkInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Response response;
+                try {
+                    response = chain.proceed(chain.request());
+                } catch (ProtocolException e) {
+                    response = new Response.Builder()
+                            .request(chain.request())
+                            .code(204)
+                            .addHeader("Content-Type", "application/json")
+                            .protocol(Protocol.HTTP_1_1)
+                            .message("normal delete, move along")
+                            .body(new ResponseBody() {
+                                @Nullable
+                                @Override
+                                public MediaType contentType() {
+                                    return null;
+                                }
 
-                            @Override
-                            public long contentLength() {
-                                return 0;
-                            }
+                                @Override
+                                public long contentLength() {
+                                    return 0;
+                                }
 
-                            @Override
-                            public BufferedSource source() {
-                                return null;
-                            }
-                        })
-                        .build();
+                                @Override
+                                public BufferedSource source() {
+                                    return null;
+                                }
+                            })
+                            .build();
+                }
+                return response;
             }
-            return response;
         });
 
-        GsonBuilder gsonBuilder = new GsonBuilder()
-                .disableHtmlEscaping();
-
-        gsonBuilder.registerTypeAdapter(Date.class, (JsonDeserializer<Date>) (json, typeOfT, context) -> new Date(json.getAsJsonPrimitive().getAsLong()));
-
-        Gson gson = gsonBuilder.create();
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+                .disableHtmlEscaping()
+                .create();
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
-                .connectTimeout(60, TimeUnit.SECONDS)
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
+                .cache(null)
                 .build();
+
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(getBaseUrl())
+//                .client(builder.build())
                 .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

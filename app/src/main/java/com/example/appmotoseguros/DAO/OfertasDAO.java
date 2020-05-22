@@ -1,13 +1,5 @@
 package com.example.appmotoseguros.DAO;
 
-import com.example.appmotoseguros.model.Cadastro;
-import com.example.appmotoseguros.model.Ofertas;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class OfertasDAO {
 
   /*  public List<Ofertas> lista() {

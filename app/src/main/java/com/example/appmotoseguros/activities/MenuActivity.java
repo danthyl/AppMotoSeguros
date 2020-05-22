@@ -24,6 +24,4 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(MenuActivity.this, FormularioCompradorActivity.class);
         startActivity(intent);
     }
-
-
 }
