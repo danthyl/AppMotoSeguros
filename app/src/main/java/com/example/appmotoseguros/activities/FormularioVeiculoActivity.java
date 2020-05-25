@@ -120,7 +120,7 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         comprador.setEstadoCivil("1");
 
         Endereco endereco = new Endereco();
-        endereco.setCep("07713030");
+        endereco.setCep("07713305");
         endereco.setComplemento("Casa");
         endereco.setNumero("48");
         comprador.setEndereco(endereco);

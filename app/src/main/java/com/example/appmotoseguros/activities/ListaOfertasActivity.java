@@ -39,7 +39,7 @@ public class ListaOfertasActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Ofertas> listaofertas = new ArrayList<>();
 
-    private TextView textItensQtd;
+    public TextView textItensQtd;
 //    private TextView textItensTotal;
 
     private AdapterOfertas adapterOfertas;
@@ -64,6 +64,7 @@ public class ListaOfertasActivity extends AppCompatActivity {
         actionBar.setTitle("");
     }
 
+    @SuppressLint("SetTextI18n")
     private void inicializacaoDosCampos() {
         progressHUD = new SVProgressHUD(this);
 
@@ -81,6 +82,8 @@ public class ListaOfertasActivity extends AppCompatActivity {
 
         textItensQtd = findViewById(R.id.textItensQtd);
         //textItensTotal  = findViewById(R.id.textItensTotal);
+
+        textItensQtd.setText("ITENS QTD. " + adapterOfertas.getItemCount() + " - R$0.00");
 
         //Lista Local de teste
         //criarOfertas();
@@ -128,15 +131,15 @@ public class ListaOfertasActivity extends AppCompatActivity {
                 .subscribe(authResponse -> {
                             adapterOfertas.addAll(authResponse);
 
-                            float total = 0.0f;
+//                            float total = 0.0f;
+//
+//                            for(Ofertas oferta : authResponse){
+//                                float tempPrice = Float.parseFloat(oferta.getPreco().replaceAll("[^\\d.]", ""));
+//                                total += tempPrice;
+//                            }
 
-                            for(Ofertas oferta : authResponse){
-                                float tempPrice = Float.parseFloat(oferta.getPreco().replaceAll("[^\\d.]", ""));
-                                total += tempPrice;
-                            }
-
-                            textItensQtd.setText("ITENS QTD. " + adapterOfertas.getItemCount() +
-                                    " - R$" + String.format("%.2f", total));
+//                            textItensQtd.setText("ITENS QTD. " + adapterOfertas.getItemCount() +
+//                                    " - R$" + String.format("%.2f", adapterOfertas.precoFinal));
 
                             progressHUD.dismiss();
                         },
@@ -144,6 +147,10 @@ public class ListaOfertasActivity extends AppCompatActivity {
                             progressHUD.dismiss();
                             Toast.makeText(ListaOfertasActivity.this, getString(R.string.msg_error_load_data), Toast.LENGTH_SHORT).show();
                         });
+    }
+
+    private void atualizaPreco(){
+
     }
 
     public void ChamaResumoCompra(View view) {

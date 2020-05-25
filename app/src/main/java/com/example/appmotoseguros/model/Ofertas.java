@@ -32,6 +32,8 @@ public class Ofertas implements Serializable {
     @SerializedName("fipe")
     private final String fipe;
 
+    private boolean selected;
+
     public Ofertas(String id, String nome, String descricao, String cobertura, String preco, String fipe) {
         this.id = id;
         this.nome = nome;
@@ -63,4 +65,11 @@ public class Ofertas implements Serializable {
         return fipe;
     }
 
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 }
