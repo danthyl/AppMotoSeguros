@@ -123,7 +123,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/numero"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:maxLength="6"
                 android:textSize="18sp" />
 
@@ -156,7 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@android:color/black"
+                android:background="@drawable/button_pedido"
                 android:ellipsize="none"
                 android:onClick="ChamaFormularioVeiculo"
                 android:text="@string/proximo"

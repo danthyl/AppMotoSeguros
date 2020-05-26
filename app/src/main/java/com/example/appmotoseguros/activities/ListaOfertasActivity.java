@@ -1,6 +1,7 @@
 package com.example.appmotoseguros.activities;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -83,7 +85,7 @@ public class ListaOfertasActivity extends AppCompatActivity {
         textItensQtd = findViewById(R.id.textItensQtd);
         //textItensTotal  = findViewById(R.id.textItensTotal);
 
-        textItensQtd.setText("ITENS QTD. " + adapterOfertas.getItemCount() + " - R$0.00");
+        textItensQtd.setText("ITENS QTD. " + adapterOfertas.getItemCount() + " - R$ 0.00");
 
         //Lista Local de teste
         //criarOfertas();
@@ -158,6 +160,7 @@ public class ListaOfertasActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -180,5 +183,32 @@ public class ListaOfertasActivity extends AppCompatActivity {
         vendedor.setIdloja("104");
 
         return vendedor;
+    }
+
+    public void finalizaCompra(View view){
+
+        //Instanciar o alertdialog
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        //configurar o titulo
+        dialog.setTitle("FINALIZANDO A COMPRA");
+        dialog.setMessage("Deseja finalizar sua compra?");
+        //configura ações para sim e não
+        dialog.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(
+                        getApplicationContext(), "Passe o cartão!", Toast.LENGTH_SHORT
+                ).show();
+
+            }
+        });
+
+        dialog.setNegativeButton("Voltar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
     }
 }

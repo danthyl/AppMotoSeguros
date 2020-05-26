@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ import com.example.appmotoseguros.api.request.CadastroRequest;
 import com.example.appmotoseguros.model.Comprador;
 import com.example.appmotoseguros.model.Endereco;
 import com.example.appmotoseguros.model.PrincipalCondutor;
+import com.example.appmotoseguros.model.Veiculo;
 
 import java.util.Objects;
 
@@ -32,6 +34,8 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
     private EditText campoPlacaLetra;
     private EditText campoRenavam;
     private ImageView imageFotoPainel;
+
+    private Comprador comprador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,14 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         campoQuilometragem = findViewById(R.id.editQuilo);
 
         campoPlacaLetra.requestFocus();
+        campoPlacaLetra.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (campoPlacaLetra.getText().length() == 3)
+                    campoPlacaNumero.requestFocus();
+                return false;
+            }
+        });
 
         imageFotoPainel = findViewById(R.id.imageViewFotoPainel);
         findViewById(R.id.imageViewFotoPainel).setOnClickListener(view -> tirarFoto());
@@ -80,6 +92,15 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
 //            Toast.makeText(this, "Precisamos dos dados do comprador, por favor preencha os dados.",
 //                    Toast.LENGTH_SHORT).show();;
 //        }
+    }
+
+    public void ChamaListaOfertasSemFormulario(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("objeto_comprador", comprador);
+        bundle.putSerializable("objeto_veiculo", carregaVeiculoTeste());
+        Intent intent = new Intent(FormularioVeiculoActivity.this, ListaOfertasActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     @Override
@@ -143,5 +164,16 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         comprador.setPrincipalCondutor(principalCondutor);
 
         return comprador;
+    }
+
+    private Veiculo carregaVeiculoTeste(){
+        Veiculo veiculo = new Veiculo();
+        veiculo.setComprovanteKilometragem("xxxxxxxxxxxxxxxxxxxx");
+        veiculo.setKilometragem("34000");
+        veiculo.setPlaca("EON9890");
+        veiculo.setRenavan("00412745780");
+        veiculo.setNumeroChassi("");
+
+        return veiculo;
     }
 }

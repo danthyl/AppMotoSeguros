@@ -23,7 +23,8 @@
         <activity android:name=".activities.FormularioCompradorActivity"/>
         <activity android:name=".activities.MenuActivity"/>
         <activity android:name=".activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
 
         <activity android:name=".activities.LaunchActivity"
             android:theme="@style/AppTheme.NoActionBar">

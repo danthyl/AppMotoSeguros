@@ -125,25 +125,48 @@
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
-    <ImageView
-        android:id="@+id/imageViewFotoPainel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        android:contentDescription="@string/todo" />
+        <ImageView
+            android:id="@+id/imageViewFotoPainel"
+            android:layout_width="239dp"
+            android:layout_height="112dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/photo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonProx"
+            android:id="@+id/buttonMoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@android:color/black"
+            android:layout_weight="1"
+            android:background="@drawable/button_moto"
             android:onClick="ChamaFormularioQuestionario"
-            android:text="@string/proximo"
-            android:textColor="@android:color/holo_orange_light"
+            android:text="@string/btnmoto"
+            android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonCarro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_carro"
+                android:onClick="ChamaListaOfertasSemFormulario"
+                android:text="@string/btncarro"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     </ScrollView>

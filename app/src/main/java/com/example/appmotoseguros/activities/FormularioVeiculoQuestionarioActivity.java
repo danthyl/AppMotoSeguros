@@ -1,5 +1,6 @@
 package com.example.appmotoseguros.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,8 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.appmotoseguros.R;
 import com.example.appmotoseguros.model.Comprador;
@@ -117,6 +120,7 @@ public class FormularioVeiculoQuestionarioActivity extends AppCompatActivity imp
         MaskTextWatcher mtwdatacondutor = new MaskTextWatcher(campoDataCondutor, datac);
         campoDataCondutor.addTextChangedListener(mtwdatacondutor);
     }
+
 
     public void ChamaListaOfertas(View view) {
         Bundle bundle = new Bundle();
