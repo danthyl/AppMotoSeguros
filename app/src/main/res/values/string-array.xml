@@ -63,6 +63,7 @@
     </string-array>
 
     <string-array name="Spinner_estado_civil">
+        <item>ESTADO CIVIL</item>
         <item>SOLTEIRO</item>
         <item>CASADO</item>
         <item>SEPARADO</item>
