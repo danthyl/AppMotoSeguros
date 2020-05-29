@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +31,8 @@ import java.util.Objects;
 
 public class FormularioVeiculoActivity extends AppCompatActivity {
 
+    private static final int PLACA_LETRA_MAX = 3;
+
     private EditText campoQuilometragem;
     private EditText campoPlacaNumero;
     private EditText campoPlacaLetra;
@@ -45,6 +49,8 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         configuraActionBar();
 
         inicializacaoDosCampos();
+
+        camposListener();
 
         checaPermissoes();
     }
@@ -73,6 +79,31 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
 
         imageFotoPainel = findViewById(R.id.imageViewFotoPainel);
         findViewById(R.id.imageViewFotoPainel).setOnClickListener(view -> tirarFoto());
+    }
+
+    private void camposListener() {
+
+        campoPlacaLetra.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count < 3) campoPlacaLetra.requestFocus();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                Editable temp = s;
+
+                if (temp.length() >= PLACA_LETRA_MAX) {
+                    campoPlacaNumero.requestFocus();
+                }
+            }
+        });
     }
 
     private void checaPermissoes() {

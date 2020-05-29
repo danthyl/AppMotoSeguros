@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.appmotoseguros">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -16,17 +16,23 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
 
-        <activity android:name=".activities.PedidoActivity"/>
-        <activity android:name=".activities.ListaOfertasActivity"/>
-        <activity android:name=".activities.FormularioVeiculoQuestionarioActivity"/>
-        <activity android:name=".activities.FormularioVeiculoActivity"/>
-        <activity android:name=".activities.FormularioCompradorActivity"/>
-        <activity android:name=".activities.MenuActivity"/>
-        <activity android:name=".activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan|adjustResize"/>
+        <activity android:name=".activities.PedidoActivity" />
+        <activity android:name=".activities.ListaOfertasActivity" />
+        <activity android:name=".activities.FormularioVeiculoQuestionarioActivity" />
 
-        <activity android:name=".activities.LaunchActivity"
+        <activity
+            android:name=".activities.FormularioVeiculoActivity" />
+
+        <activity android:name=".activities.FormularioCompradorActivity" />
+        <activity android:name=".activities.MenuActivity" />
+
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+
+        <activity
+            android:name=".activities.LaunchActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>

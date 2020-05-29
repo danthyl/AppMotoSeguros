@@ -41,7 +41,7 @@
         android:layout_weight="1"
         android:background="@color/cardview_light_background"
         android:contentDescription="@string/todo"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@mipmap/logo" />
 
 
 </LinearLayout>
