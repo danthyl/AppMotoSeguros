@@ -150,7 +150,20 @@
                 android:layout_weight="1"
                 android:background="@drawable/button_pedido"
                 android:onClick="ChamaFormularioQuestionario"
-                android:text="@string/proximo"
+                android:text="@string/btnmoto"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonCarro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_pedido"
+                android:onClick="ChamaListaOfertasSemFormulario"
+                android:text="@string/btncarro"
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
