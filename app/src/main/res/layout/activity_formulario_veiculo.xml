@@ -6,7 +6,17 @@
     android:orientation="vertical"
     android:padding="5dp">
 
-    <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+        <TextView
         android:id="@+id/titulo_dados_veiculo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,14 +37,6 @@
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,6 +98,28 @@
             android:textColorHint="@android:color/darker_gray" />
 
         <TextView
+            android:id="@+id/subtitulo_chassis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/chassis"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editChassis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:digits="ABCDEFGHIJLMNOPQRSTUVXZKWY0123456789"
+            android:ems="10"
+            android:hint="@string/campo_chassis"
+            android:importantForAutofill="no"
+            android:inputType="textNoSuggestions|textCapCharacters"
+            android:maxLength="17"
+            android:textColorHint="@android:color/darker_gray" />
+
+        <TextView
             android:id="@+id/subtitulo_quilometragem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,7 +156,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:contentDescription="@string/todo"
-            app:srcCompat="@drawable/photo" />
+            app:srcCompat="@mipmap/photo" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,10 +169,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_pedido"
+                android:background="@drawable/button_moto"
                 android:onClick="ChamaFormularioQuestionario"
                 android:text="@string/btnmoto"
-                android:textColor="@android:color/holo_orange_dark"
+                android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -158,10 +182,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_pedido"
+                android:background="@drawable/button_carro"
                 android:onClick="ChamaListaOfertasSemFormulario"
                 android:text="@string/btncarro"
-                android:textColor="@android:color/holo_orange_dark"
+                android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark"
+    android:background="@android:color/white"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp">
@@ -11,37 +11,50 @@
     <Button
         android:id="@+id/buttonServicosSeguros"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:background="@android:color/holo_purple"
+        android:background="@drawable/button_servico"
         android:onClick="ChamaFormularioComprador"
         android:text="@string/servicos_e_seguros"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+         />
 
     <Button
         android:id="@+id/buttonFinanciamento"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:background="@android:color/holo_blue_light"
+        android:background="@drawable/button_financamento"
         android:text="@string/financiamento"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+         />
+
+    <Button
+        android:id="@+id/buttonCartaoCredito"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:shadowColor="@color/bgColor_overlay_black"
+        android:background="@drawable/button_cartao"
+        android:text="@string/btncartao"
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+         />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/bannerlogo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="5dp"
         android:layout_weight="1"
         android:background="@color/cardview_light_background"
         android:contentDescription="@string/todo"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@mipmap/banner_logo1" />
 
 
 </LinearLayout>
