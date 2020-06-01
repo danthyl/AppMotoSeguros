@@ -127,7 +127,7 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
 
     public void ChamaListaOfertasSemFormulario(View view) {
         Bundle bundle = new Bundle();
-        bundle.putSerializable("objeto_comprador", comprador);
+        bundle.putSerializable("objeto_comprador", carregaCompradorTeste());
         bundle.putSerializable("objeto_veiculo", carregaVeiculoTeste());
         Intent intent = new Intent(FormularioVeiculoActivity.this, ListaOfertasActivity.class);
         intent.putExtras(bundle);
@@ -201,8 +201,8 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         Veiculo veiculo = new Veiculo();
         veiculo.setComprovanteKilometragem("xxxxxxxxxxxxxxxxxxxx");
         veiculo.setKilometragem("34000");
-        veiculo.setPlaca("EON9890");
-        veiculo.setRenavan("00412745780");
+        veiculo.setPlaca("FXR9915");
+        veiculo.setRenavan("");
         veiculo.setNumeroChassi("");
 
         return veiculo;
