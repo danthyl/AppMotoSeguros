@@ -16,6 +16,9 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ibug);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         //Toast.makeText(this, "TOKEN: " + SessionController.getInstance().getToken(), Toast.LENGTH_SHORT).show();
     }

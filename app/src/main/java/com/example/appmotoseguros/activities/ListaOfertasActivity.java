@@ -64,6 +64,7 @@ public class ListaOfertasActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
+
     }
 
     @SuppressLint("SetTextI18n")

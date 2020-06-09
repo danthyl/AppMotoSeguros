@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.appmotoseguros.activities.FormularioVeiculoActivity">
 
     <LinearLayout
@@ -12,203 +12,227 @@
         android:orientation="vertical"
         android:padding="5dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent">
 
-
-        <TextView
-        android:id="@+id/titulo_dados_veiculo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@android:color/holo_orange_dark"
-        android:gravity="center"
-        android:text="@string/dados_do_veiculo"
-        android:textColor="@android:color/white"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/subtitulo_placa_veiculo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/placa_do_veiculo"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
-
-<<<<<<< HEAD
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-=======
->>>>>>> e0e8c8a13af3edeeec16014093e264f623486ed7
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/editPlacaLetras"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:digits="ABCDEFGHIJLMNOPQRSTUVXZKWY"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/placa_letras"
-                android:importantForAutofill="no"
-                android:inputType="textNoSuggestions|textCapCharacters"
-                android:maxLength="3"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/editPlacaNumeros"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="@string/placa_numero"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:imeOptions="actionNext"
-                android:maxLength="4"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/subtitulo_renavan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/renavam"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/editRenavam"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="@string/campo_renavam"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:maxLength="11"
-            android:textColorHint="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/subtitulo_chassis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/chassis"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/editChassis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:digits="ABCDEFGHIJLMNOPQRSTUVXZKWY0123456789"
-            android:ems="10"
-            android:hint="@string/campo_chassis"
-            android:importantForAutofill="no"
-            android:inputType="textNoSuggestions|textCapCharacters"
-            android:maxLength="17"
-            android:textColorHint="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/subtitulo_quilometragem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/quilometragem"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/editQuilo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:ems="10"
-            android:hint="@string/campo_veiculo"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:maxLength="5"
-            android:textColorHint="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/subtitulo_foto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/foto_da_quilometragem"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/imageViewFotoPainel"
-            android:layout_width="239dp"
-            android:layout_height="112dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:contentDescription="@string/todo"
-            app:srcCompat="@mipmap/photo" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonMoto"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_moto"
-                android:onClick="ChamaFormularioQuestionario"
-                android:text="@string/btnmoto"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/buttonCarro"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_carro"
-                android:onClick="ChamaListaOfertasSemFormulario"
-                android:text="@string/btncarro"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/titulo_dados_veiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorDadosVeiculo"
+                    android:gravity="center"
+                    android:text="@string/dados_do_veiculo"
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/subtitulo_placa_veiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/placa_do_veiculo"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
 
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/editPlacaLetras"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:digits="ABCDEFGHIJLMNOPQRSTUVXZKWY"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="@string/placa_letras"
+                            android:importantForAutofill="no"
+                            android:inputType="textNoSuggestions|textCapCharacters"
+                            android:maxLength="3"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:textSize="30sp" />
+
+                        <EditText
+                            android:id="@+id/editPlacaNumeros"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="@string/placa_numero"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:textColorHint="@android:color/darker_gray"
+                            android:textSize="30sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/subtitulo_valor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorDadosRenavan"
+                        android:layout_margin="5dp"
+                        android:text="@string/valor_veiculo"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/editValorVeiculo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:digits="1234567890.,"
+                        android:ems="10"
+                        android:hint="@string/valor_veiculo"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/subtitulo_renavan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorDadosRenavan"
+                        android:layout_margin="5dp"
+                        android:text="@string/renavam"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/editRenavam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:ems="10"
+                        android:hint="@string/campo_renavam"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/subtitulo_chassis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorDadosRenavan"
+                        android:layout_margin="5dp"
+                        android:text="@string/chassis"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/editChassis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:digits="ABCDEFGHIJLMNOPQRSTUVXZKWY0123456789"
+                        android:ems="10"
+                        android:hint="@string/campo_chassis"
+                        android:importantForAutofill="no"
+                        android:inputType="textNoSuggestions|textCapCharacters"
+                        android:maxLength="17"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/subtitulo_quilometragem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="@string/quilometragem"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        />
+
+                    <EditText
+                        android:id="@+id/editQuilo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:ems="10"
+                        android:hint="@string/campo_veiculo"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5"
+                        android:textColorHint="@android:color/darker_gray" />
+
+                    <TextView
+                        android:id="@+id/subtitulo_foto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="@string/foto_da_quilometragem"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewFotoPainel"
+                        android:layout_width="239dp"
+                        android:layout_height="112dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:contentDescription="@string/todo"
+                        app:srcCompat="@mipmap/photo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonMoto"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_moto"
+                            android:onClick="ChamaFormularioQuestionario"
+                            android:text="@string/btnmoto"
+                            android:textColor="@color/colortext"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/buttonCarro"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_carro"
+                            android:onClick="ChamaListaOfertasSemFormulario"
+                            android:text="@string/btncarro"
+                            android:textColor="@color/colortext"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
     </LinearLayout>
-
-    </LinearLayout>
-
 </ScrollView>

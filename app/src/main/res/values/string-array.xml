@@ -80,7 +80,7 @@
 
     <string-array name="Spinner_pergunta2">
         <item>NÃO UTILIZO PARA IR AO LOCAL DE TRABALHO E SERVIÇOS ESTERNOS</item>
-        <item>UTILIZO E GUARDA NO LOCAL DE TRABALHO/SERVIÇOS</item>
+        <item>UTILIZO E GUARDO NO LOCAL DE TRABALHO/SERVIÇOS</item>
         <item>UTILIZO, MAS NÃO TEM UM LOCAL PARA GUARDAR</item>
     </string-array>
 

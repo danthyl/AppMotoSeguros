@@ -48,7 +48,7 @@
                 android:id="@+id/titulo_dados_cliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/holo_blue_dark"
+                android:background="@color/colorDadosCliente"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="@string/dados_do_cliente"

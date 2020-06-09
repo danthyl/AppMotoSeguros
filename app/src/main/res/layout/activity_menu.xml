@@ -17,7 +17,7 @@
         android:background="@drawable/button_servico"
         android:onClick="ChamaFormularioComprador"
         android:text="@string/servicos_e_seguros"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colortext"
         android:textSize="35sp"
          />
 
@@ -29,7 +29,7 @@
         android:layout_weight="1"
         android:background="@drawable/button_financamento"
         android:text="@string/financiamento"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colortext"
         android:textSize="35sp"
          />
 
@@ -42,7 +42,7 @@
         android:shadowColor="@color/bgColor_overlay_black"
         android:background="@drawable/button_cartao"
         android:text="@string/btncartao"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colortext"
         android:textSize="35sp"
          />
 
@@ -54,11 +54,7 @@
         android:layout_weight="1"
         android:background="@color/cardview_light_background"
         android:contentDescription="@string/todo"
-<<<<<<< HEAD
-        app:srcCompat="@mipmap/logo" />
-=======
-        app:srcCompat="@mipmap/banner_logo1" />
->>>>>>> e0e8c8a13af3edeeec16014093e264f623486ed7
+        app:srcCompat="@mipmap/banner" />
 
 
 </LinearLayout>

@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimary">#708090</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorButtonSegurosServicos">#BD1C00</color>
+    <color name="colorButtonCartaoCredito">#FFD700</color>
+    <color name="colorButtonFinanciamento">#5F5F5F</color>
+    <color name="colorButtonFinalizar">#FF3600</color>
+    <color name="colorButtonCarro">#00FFFF</color>
+    <color name="colorButtonMoto">#AE89F7</color>
+    <color name="colorDadosRenavan">#FFFF52</color>
+    <color name="colorDadosCliente">#0028FF</color>
+    <color name="colorDadosVeiculo">#FF3600</color>
+    <color name="colorProdutosDisponiveis">#708090</color>
+    <color name="colorStatusBar">#000000</color>
+    <color name="colortext">#FFFFFF</color>
+
+
+
 </resources>

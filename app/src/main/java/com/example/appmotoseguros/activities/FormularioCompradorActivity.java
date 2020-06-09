@@ -32,6 +32,8 @@ public class FormularioCompradorActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("");//Sem título
+
+
         inicializacaoDosCampos();
 
         SimpleMaskFormatter smfcc = new SimpleMaskFormatter("(NN)NNNNN-NNNN");

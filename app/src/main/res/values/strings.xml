@@ -9,7 +9,7 @@
     <string name="cpf_do_cliente">CPF DO CLIENTE</string>
     <string name="cpf_do_vendedor">CPF DO VENDEDOR</string>
     <string name="celular_do_vendedor">CELULAR DO VENDEDOR</string>
-    <string name="confere_celular_do_cliente">CONFERE CELULAR DO CLIENTE</string>
+    <string name="confere_celular_do_cliente">CELULAR DO CLIENTE (REPETIR)</string>
     <string name="cep">CEP</string>
     <string name="numero">NÚMERO</string>
     <string name="dados_do_vendedor">DADOS DO VENDEDOR</string>
@@ -28,12 +28,12 @@
     <string name="placa_letras">YYY</string>
     <string name="placa_do_veiculo">PLACA DO VEÍCULO</string>
     <string name="placa_numero">1234</string>
-    <string name="renavam">RENAVAM</string>
-    <string name="campo_chassis">SOMENTE PARA VEÍCULOS NOVOS SEM PLACA</string>
-    <string name="chassis">INFORME O CHASSIS DO VEÍCULO</string>
+    <string name="renavam">RENAVAM *SOMENTE PARA VEÍCULOS ZERO KM*</string>
     <string name="campo_renavam">NÚMERO DE 11 DIGITOS</string>
+    <string name="campo_chassis">17 CARACTERES</string>
+    <string name="chassis">INFORME O CHASSIS DO VEÍCULO *SOMENTE PARA VEÍCULOS ZERO KM*</string>
     <string name="quilometragem">QUILOMETRAGEM</string>
-    <string name="campo_veiculo">VEÍCULO COM ATÉ 90000</string>
+    <string name="campo_veiculo">VEÍCULO COM ATÉ 99900</string>
     <string name="foto_da_quilometragem">FOTO DA QUILOMETRAGEM</string>
     <string name="finalizar_pedido">FINALIZAR PEDIDO</string>
     <string name="servicos_e_seguros">SERVIÇOS E SEGUROS</string>
@@ -42,7 +42,7 @@
     <string name="financiamento">FINANCIAMENTO</string>
     <string name="questionario">QUESTIONÁRIO DE USO</string>
     <string name="pergunta1">1) Veículo é guardado em garagem/estacionamento fechado na residência?</string>
-    <string name="pergunta2">2) Veículo é guardado em garagem/estacionamento fechado quandoutilizado para na ir a local de trabalho?</string>
+    <string name="pergunta2">2) Veículo é guardado em garagem/estacionamento fechado quando utilizado para na ir a local de trabalho?</string>
     <string name="pergunta3">3) Veículo é guardado em garagem/estacionamento fechado quando utilizado para ir a faculdade/colégio?</string>
     <string name="tipo_de_utilizacao">Tipo de Utilização</string>
     <string name="dados_condutor">DADOS DO PRINCIPAL CONDUTOR</string>
@@ -52,11 +52,14 @@
     <string name="btncarro">CARRO</string>
     <string name="btncartao">CARTÃO DE CRÉDITO</string>
     <string name="btnmoto">MOTO</string>
+    <string name="valor_veiculo">VALOR DO VEÍCULO NA NOTA FISCAL</string>
+    <string name="todo">TODO</string>
 
     <!-- Mensagens de erro -->
     <string name="msg_server_error">Ocorreu um erro inesperado no servidor. Tente novamente mais tarde.</string>
     <string name="msg_invalid_login">Nome de usuário ou senha incorretos. Entre novamente com os dados.</string>
     <string name="msg_error_load_data">Erro ao carregar dados. Tente novamente mais tarde.</string>
-    <string name="todo">TODO</string>
+
+
 
 </resources>

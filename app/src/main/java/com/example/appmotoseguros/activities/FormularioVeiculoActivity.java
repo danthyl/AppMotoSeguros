@@ -26,6 +26,8 @@ import com.example.appmotoseguros.model.Comprador;
 import com.example.appmotoseguros.model.Endereco;
 import com.example.appmotoseguros.model.PrincipalCondutor;
 import com.example.appmotoseguros.model.Veiculo;
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 import java.util.Objects;
 
@@ -37,7 +39,9 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
     private EditText campoPlacaNumero;
     private EditText campoPlacaLetra;
     private EditText campoRenavam;
+    private EditText campoValorVeiculo;
     private ImageView imageFotoPainel;
+
 
     private Comprador comprador;
 
@@ -53,12 +57,15 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         camposListener();
 
         checaPermissoes();
+
+
     }
 
     private void configuraActionBar() {
         ActionBar actionBar = getSupportActionBar();
         Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
+
     }
 
     private void inicializacaoDosCampos() {
@@ -66,6 +73,8 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
         campoPlacaLetra = findViewById(R.id.editPlacaLetras);
         campoRenavam = findViewById(R.id.editRenavam);
         campoQuilometragem = findViewById(R.id.editQuilo);
+        campoValorVeiculo = findViewById(R.id.editValorVeiculo);
+
 
         campoPlacaLetra.requestFocus();
         campoPlacaLetra.setOnKeyListener(new View.OnKeyListener() {
