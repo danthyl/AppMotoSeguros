@@ -91,9 +91,9 @@
     </string-array>
 
     <string-array name="Spinner_tipoUtilizacao">
+        <item>LAZER EXCLUSIVAMENTE</item>
         <item>LOCOMOÇÃO/IDA-RETORNO LOCAL FIXO DE TRABALHO/LAZER</item>
         <item>ATIVIDADE PROFISSIONAL</item>
-        <item>LAZER EXCLUSIVAMENTE</item>
     </string-array>
 
 </resources>

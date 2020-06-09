@@ -31,7 +31,7 @@
     <string name="renavam">RENAVAM *SOMENTE PARA VEÍCULOS ZERO KM*</string>
     <string name="campo_renavam">NÚMERO DE 11 DIGITOS</string>
     <string name="campo_chassis">17 CARACTERES</string>
-    <string name="chassis">INFORME O CHASSIS DO VEÍCULO *SOMENTE PARA VEÍCULOS ZERO KM*</string>
+    <string name="chassis">SOMENTE PARA VEÍCULOS 0KM, INFORME O CHASSIS DO VEÍCULO </string>
     <string name="quilometragem">QUILOMETRAGEM</string>
     <string name="campo_veiculo">VEÍCULO COM ATÉ 99900</string>
     <string name="foto_da_quilometragem">FOTO DA QUILOMETRAGEM</string>
@@ -52,7 +52,8 @@
     <string name="btncarro">CARRO</string>
     <string name="btncartao">CARTÃO DE CRÉDITO</string>
     <string name="btnmoto">MOTO</string>
-    <string name="valor_veiculo">VALOR DO VEÍCULO NA NOTA FISCAL</string>
+    <string name="subtitulo_valor_veiculo">SOMENTE PARA VEÍCULO 0KM, INFORME O VALOR DO VEÍCULO NA NOTA FISCAL</string>
+    <string name="valor_veiculo">VALOR DO VEÍCULO R$ 000.000,00</string>
     <string name="todo">TODO</string>
 
     <!-- Mensagens de erro -->

@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:background="@color/colorDadosRenavan"
                 android:text="@string/pergunta1"
                 android:textSize="18sp" />
 
@@ -35,13 +36,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:entries="@array/Spinner_pergunta1" />
+                android:entries="@array/Spinner_pergunta1"
+                android:layout_weight="1"
+                />
 
             <TextView
                 android:id="@+id/subtitulo_pergunta2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:background="@color/colorDadosRenavan"
                 android:text="@string/pergunta2"
                 android:textSize="18sp" />
 
@@ -58,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:background="@color/colorDadosRenavan"
                 android:text="@string/pergunta3"
                 android:textSize="18sp" />
 
@@ -74,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="@string/tipo_de_utilizacao"
+                android:background="@color/colorDadosRenavan"
                 android:textSize="18sp" />
 
             <Spinner

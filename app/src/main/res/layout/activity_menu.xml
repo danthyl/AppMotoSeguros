@@ -42,7 +42,7 @@
         android:shadowColor="@color/bgColor_overlay_black"
         android:background="@drawable/button_cartao"
         android:text="@string/btncartao"
-        android:textColor="@color/colortext"
+        android:textColor="@android:color/black"
         android:textSize="35sp"
          />
 

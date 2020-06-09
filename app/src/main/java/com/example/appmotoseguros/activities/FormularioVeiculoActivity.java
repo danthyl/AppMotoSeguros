@@ -71,7 +71,7 @@ public class FormularioVeiculoActivity extends AppCompatActivity {
     private void inicializacaoDosCampos() {
         campoPlacaNumero = findViewById(R.id.editPlacaNumeros);
         campoPlacaLetra = findViewById(R.id.editPlacaLetras);
-        campoRenavam = findViewById(R.id.editRenavam);
+        //campoRenavam = findViewById(R.id.editRenavam);
         campoQuilometragem = findViewById(R.id.editQuilo);
         campoValorVeiculo = findViewById(R.id.editValorVeiculo);
 
